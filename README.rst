@@ -33,11 +33,15 @@ To install **Mayan EDMS**, simply do:
 
 .. code-block:: bash
 
-    $ virtualenv venv
-    $ source venv/bin/activate
-    $ pip install mayan-edms
-    $ mayan-edms.py initialsetup
-    $ mayan-edms.py runserver
+    sudo apt-get install python-dev libjpeg-dev libfreetype6-dev zlib1g-dev
+    sudo ln -s /usr/lib/`uname -i`-linux-gnu/libfreetype.so /usr/lib/
+    sudo ln -s /usr/lib/`uname -i`-linux-gnu/libjpeg.so /usr/lib/
+    sudo ln -s /usr/lib/`uname -i`-linux-gnu/libz.so /usr/lib/ # http://codeinthehole.com/writing/how-to-install-pil-on-64-bit-ubuntu-1204/
+    virtualenv venv
+    source venv/bin/activate
+    pip install mayan-edms
+    mayan-edms.py initialsetup
+    mayan-edms.py runserver 0.0.0.0:8000
 
 Point your browser to 127.0.0.1:8000 and use the automatically created admin
 account.
